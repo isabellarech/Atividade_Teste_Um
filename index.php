@@ -7,6 +7,19 @@ $password = 'root';
 $db = 'sistema_simples';
 
 $conn = new mysqli($host, $user, $password, $db);
+
+if ($conn->connect_error) {
+    die("Erro de conexão!");
+}else{
+    //echo "<p> Banco: OK! </p>";
+    echo "<script>console.log('Banco: OK!');</script>";
+};
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuario = $_POST['usuario'];
+    $senha = $_POST['senha'];
+}
+
 ?>
 
 <html lang="en">
