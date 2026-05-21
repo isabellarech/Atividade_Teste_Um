@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$host = 'localhost';
+$user   = 'root';
+$password = 'root';
+$db = 'sistema_simples';
+
+$conn = new mysqli($host, $user, $password, $db);
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
