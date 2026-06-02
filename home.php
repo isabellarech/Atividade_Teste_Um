@@ -7,13 +7,13 @@ session_start();
 include("conexao_db.php");
 
 // Verifica se existe um usuário logado; caso contrário, redireciona para a página de login
-if(!isset($_SESSION["usuario"])){
+if (!isset($_SESSION["usuario"])) {
     header("Location: index.php");
     exit();
 }
 
 // Verifica se o formulário de cadastro foi enviado
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioNovo = $_POST["usuario"];
     $senhaNovo = $_POST["senha"];
 
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "INSERT INTO usuario (usuario, senha) VALUES ('$usuarioNovo','$senhaNovo')";
 
     // Verifica se o cadastro foi realizado com sucesso
-    if($conn->query($sql) === TRUE){
+    if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Novo usuário adicionado com sucesso')</script>";
     } else {
         echo "<script>alert('Erro ao cadastrar usuário')</script>";
@@ -30,11 +30,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 </head>
+
 <body>
 
     <!-- Exibe uma mensagem de boas-vindas com o nome do usuário logado -->
@@ -67,4 +69,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <a href="logout.php">Sair</a>
 
 </body>
+
 </html>
