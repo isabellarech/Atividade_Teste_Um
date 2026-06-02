@@ -15,7 +15,7 @@
 
     <?php
     
-    // Tabela para exibir os usuários cadastrados no banco de dados
+    // Inclui a conexão com o banco de dados, para poder acessar os dados dos usuários cadastrados
     $sqlUsuarios = "SELECT * FROM usuario";
 
         $resultadoUsuarios = $conn->query($sqlUsuarios);
